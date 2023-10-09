@@ -7,5 +7,3 @@ Set the config variables on rows 4-7.
 - rtiSchoolId = the RTI identifier for the school you intend to pull attendance from
 - infiniteCampusSchoolId = The IC identifier for the school you intend to insert attendance for
 - csvFileName = a known filename you can refer to in other processes
-
-- 
