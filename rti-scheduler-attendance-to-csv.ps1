@@ -1,6 +1,6 @@
 ## RTI Scheduler Attendance Export
 
-## You should only need to set these three values
+## You should only need to set these four values
 $rtiApiToken = '<your-rti-api-token-here>'
 $rtiSchoolId = '<your-rti-school-id-here>'
 $infiniteCampusSchoolId = '<your-infinite-campus-school-id-here>'
@@ -32,10 +32,10 @@ $results =  Invoke-RestMethod @params
 
 ## Manipulate each row of the results retrieved from RTI Scheduler
 foreach ($absenceRecord in $results){
-	## removes all commas from every value on this row (Is this some sort of requirement?)
-	$absenceRecord | ForEach-Object { $_ -replace ',',' ' } 
-	
-	## adds the IC school ID
+    ## removes all commas from every value on this row (Is this some sort of requirement?)
+    $absenceRecord | ForEach-Object { $_ -replace ',',' ' } 
+
+    ## adds the IC school ID
     $absenceRecord | Add-Member -MemberType NoteProperty $infiniteCampusSchoolId -Name 'school'
 }
 
